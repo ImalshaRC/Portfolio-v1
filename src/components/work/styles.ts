@@ -20,8 +20,12 @@ export const Container = styled.section`
   }
 
   .custom-date {
-    color: var(--text-dark);
     font-size: 1.6rem !important;
+    color: var(--text-dark);
+
+    .light & {
+      color: var(--text-light);
+    }
   }
 
   .vertical-timeline-element-title {
@@ -37,10 +41,10 @@ export const Container = styled.section`
   }
 
   ul {
-    list-style-type: disc; /* Ensure bullet points */
+    list-style-type: disc;
     margin-left: 2rem;
     margin-top: 1rem;
-    padding-left: 2rem; /* Added padding for better spacing */
+    padding-left: 2rem;
 
     li {
       font-size: 1.4rem;
@@ -63,9 +67,8 @@ export const Container = styled.section`
     object-fit: contain;
   }
 
-  /* Adding margin to VerticalTimelineElement */
   .vertical-timeline-element {
-    margin-bottom: 2rem; /* Space between timeline elements */
+    margin-bottom: 2rem;
   }
 
   @media (max-width: 768px) {
@@ -78,9 +81,8 @@ export const Container = styled.section`
       margin-left: 1rem;
     }
 
-    /* Adjust margin-bottom for small screens */
     .vertical-timeline-element {
-      margin-bottom: 3rem; /* More space between elements on small screens */
+      margin-bottom: 3rem;
     }
   }
 `;

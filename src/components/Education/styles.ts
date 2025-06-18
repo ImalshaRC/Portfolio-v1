@@ -20,8 +20,12 @@ export const Container = styled.section`
   }
 
   .custom-date {
-    color: var(--text-dark);
     font-size: 1.6rem !important;
+    color: var(--text-dark);
+
+    .light & {
+      color: var(--text-light);
+    }
   }
 
   .vertical-timeline-element-title {
