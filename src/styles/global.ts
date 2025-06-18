@@ -2,57 +2,122 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root{
-    --pink:rgb(81, 86, 86);
-    --black: #212121;
-    --green:rgb(30, 64, 188);
-    --blue:rgb(20, 153, 241);
+    /* Primary Colors */
+    --primary: #2563eb;     /* Rich Blue */
+    --secondary: #3b82f6;   /* Light Blue */
+    --accent: #0ea5e9;      /* Sky Blue */
+    
+    /* Project Title Colors */
+    --title-color: rgb(199, 220, 223);  /* Bright Cyan */
+    --category-color: rgb(117, 123, 122);  /* Deep Teal */
+    
+    /* Dark Mode Colors */
+    --bg-dark: #0f172a;     /* Deep Navy */
+    --text-dark: #f8fafc;   /* Off White */
+    --card-dark: #1e293b;   /* Slate */
+    
+    /* Light Mode Colors */
+    --bg-light: #f8fafc;    /* Off White */
+    --text-light: #0f172a;  /* Deep Navy */
+    --card-light: #ffffff;  /* Pure White */
+
+    /* Additional Colors */
+    --success: #0891b2;     /* Cyan */
+    --warning: #0d9488;     /* Teal */
+    --error: #dc2626;       /* Red */
+
+    /* Legacy color mappings for compatibility */
+    --pink: var(--secondary);
+    --black: var(--bg-dark);
+    --green: var(--primary);
+    --blue: var(--accent);
+
     scroll-padding-top: 10rem;
 
     &.light{
-
       body{
         transition: 0.5s;
-        background-color: #f5f5f5;
-        color: var(--black);
+        background-color: var(--bg-light);
+        color: var(--text-light);
       }
 
       .logo{
-        color: var(--black);
+        color: var(--text-light);
       }
 
       header.header-fixed{
         transition: 0.5s;
-        background-color: #f5f5f550;
+        background-color: rgba(248, 250, 252, 0.85);
+        backdrop-filter: blur(10px);
         a{
           transition: 0.5s;
-          color: black;
+          color: var(--text-light);
         }
         .menu,.menu:before, .menu:after{
-          background-color: var(--black); 
+          background-color: var(--text-light); 
         }
         .menu.active{
-          background-color: rgba(555,555,555,0);
+          background-color: transparent;
         }
       }
 
       footer.footer{
         transition: 0.5s;
-        background-color: rgba(0,0,0,0.1);
-        color: var(--black);
+        background-color: rgba(15, 23, 42, 0.1);
+        color: var(--text-light);
       }
 
       form{
         input,textarea{
           transition: 0.5s;
-          border: solid 1px var(--black);
-          color: var(--black);
+          border: solid 1px var(--text-light);
+          color: var(--text-light);
+          background-color: var(--card-light);
           &::placeholder{
             transition: 0.5s;
-            color: var(--black);
+            color: var(--text-light);
+            opacity: 0.7;
           }
         }
       }
 
+      /* Contact section text in light mode */
+      .contact-text {
+        color: var(--text-light);
+      }
+    }
+
+    &.dark {
+      body {
+        transition: 0.5s;
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+      }
+
+      .logo {
+        color: var(--text-dark);
+      }
+
+      header.header-fixed {
+        transition: 0.5s;
+        background-color: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(10px);
+        a {
+          transition: 0.5s;
+          color: var(--text-dark);
+        }
+      }
+
+      footer.footer {
+        transition: 0.5s;
+        background-color: rgba(248, 250, 252, 0.1);
+        color: var(--text-dark);
+      }
+
+      /* Contact section text in dark mode */
+      .contact-text {
+        color: var(--text-dark);
+      }
     }
   }
 
@@ -60,7 +125,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
     margin: 0;
-    padding:0;
+    padding: 0;
   }
 
   *{
@@ -71,13 +136,14 @@ export const GlobalStyle = createGlobalStyle`
 
   html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
   }
 
   body{
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--black);
-    color: #FFFF;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
   }
 
   body, input, textarea, button{
@@ -87,32 +153,53 @@ export const GlobalStyle = createGlobalStyle`
 
   a{
     text-decoration: none;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--accent);
+    }
   }
 
   button, .button{
     border: none;
     cursor: pointer;
-    background-color: var(--green);
-    color: #FFFF;
+    background-color: var(--primary);
+    color: var(--text-dark);
     border-radius: 2rem;
     font-weight: 500;
-    transition: filter 0.25s;
+    transition: all 0.3s ease;
+    padding: 1rem 2rem;
+    
     &:hover{
-      filter: brightness(0.8);
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 
   button:disabled, .button:disabled{
-    filter: brightness(0.8);
+    opacity: 0.7;
     cursor: not-allowed;
+    transform: none;
   }
-
 
   .logo{
     font-size: 3rem;
-    color: #FFFF;
-    // &::first-letter{
-    //   color: var(--green);
-    // }
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--accent);
+    }
+  }
+
+  /* Add selection color */
+  ::selection {
+    background-color: var(--accent);
+    color: var(--text-dark);
   }
 `

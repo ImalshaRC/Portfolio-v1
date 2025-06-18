@@ -16,23 +16,23 @@ export function Education() {
       </ScrollAnimation>
 
       <div className="timeline-container">
-        <VerticalTimeline lineColor="#23ce6b">
+        <VerticalTimeline lineColor="var(--primary)">
           {education.map((edu, index) => (
             <ScrollAnimation
               key={index}
               animateIn="fadeInUp"
-             animateOut="fadeOutDown"
+              animateOut="fadeOutDown"
               offset={50}
             >
               <VerticalTimelineElement
-                contentStyle={{ background: "#2b2b2b", color: "#23ce6b" }}
-                contentArrowStyle={{ borderRight: "8px solid #23ce6b" }}
+                contentStyle={{ background: "var(--card-dark)", color: "var(--text-dark)" }}
+                contentArrowStyle={{ borderRight: "8px solid var(--card-dark)" }}
                 date={edu.date}
                 dateClassName="custom-date"
                 iconStyle={{
-                  background: "#fff",
-                  color: "#2b2b2b",
-                  border: "2px solid #23ce6b",
+                  background: "var(--bg-light)",
+                  color: "var(--bg-dark)",
+                  border: "2px solid var(--primary)",
                 }}
                 icon={
                   <div className="timeline-icon">
@@ -44,7 +44,7 @@ export function Education() {
                   </div>
                 }
                 position={index % 2 === 0 ? "left" : "right"}
-                style={{ marginBottom: "2rem" }} // Add margin here
+                style={{ marginBottom: "2rem" }}
               >
                 <h3 className="vertical-timeline-element-title">
                   {edu.degree}

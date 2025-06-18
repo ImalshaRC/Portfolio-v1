@@ -8,7 +8,7 @@ export const Container = styled.section`
 
   h2 {
     font-size: 3rem;
-    color: var(--green);
+    color: var(--primary);
     margin-bottom: 3rem;
     text-align: center;
   }
@@ -20,19 +20,20 @@ export const Container = styled.section`
   }
 
   .custom-date {
-    color: var(--green);
+    color: var(--text-dark);
     font-size: 1.6rem !important;
   }
 
   .vertical-timeline-element-title {
     font-size: 1.8rem;
     font-weight: bold;
+    color: var(--text-dark);
   }
 
   .vertical-timeline-element-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--lightGray);
+    color: var(--text-dark);
   }
 
   ul {
@@ -40,13 +41,11 @@ export const Container = styled.section`
     margin-left: 2rem;
     margin-top: 1rem;
     padding-left: 2rem; /* Added padding for better spacing */
-    color: var(--green);
 
     li {
-      color: var(--green);
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
-      color: #fff;
+      color: var(--text-dark);
     }
   }
 

@@ -9,12 +9,11 @@ export const Container = styled.section`
     h2 {
       text-align: center;
       font-size: 4rem;
-      color: var(--black); // Ensure the heading color is consistent
       margin-bottom: 1rem;
+      color: var(--primary);
     }
 
     p {
-      color: var(--green);
       font-weight: 500;
       font-size: 1.6rem;
       margin-top: 0.5rem;
@@ -36,34 +35,39 @@ export const Container = styled.section`
       width: 100%;
       max-width: 30rem;
       gap: 2rem;
-      background-color: var(--green);
+      background-color: var(--primary);
       border-radius: 1.4rem;
       padding: 1.6rem 2.8rem;
-      transition: background-color 0.25s;
+      transition: all 0.3s ease;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 
       img {
         width: 4rem;
+        filter: brightness(0) invert(1);
         transition: transform 0.3s ease; /* Add hover transform to image */
       }
 
       a {
-        color: var(--black);
+        color: var(--text-dark);
         font-weight: 500;
         font-size: 1.4rem;
         text-decoration: none; /* Remove default underline */
-        transition: color 0.25s;
+        transition: all 0.3s ease;
       }
 
       &:hover {
-        background-color: var(--pink);
+        background-color: var(--secondary);
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 
         img {
-          transform: scale(1.1); /* Slight zoom on hover */
+          transform: scale(1.1) rotate(5deg);
         }
 
         a {
-          color: #FFF; /* Change link color on hover */
+          color: var(--text-dark);
+          font-size: 1.5rem;
+          letter-spacing: 0.5px;
         }
       }
     }
@@ -103,6 +107,10 @@ export const Container = styled.section`
 
       a {
         font-size: 1.2rem; /* Adjust link font size */
+      }
+
+      &:hover a {
+        font-size: 1.3rem;
       }
     }
   }
