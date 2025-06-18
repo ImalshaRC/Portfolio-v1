@@ -176,8 +176,9 @@ export const Container = styled.section`
     .image-controls {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      margin-top: 0.5rem;
+      width: 80%;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
 
       button {
         background-color: var(--primary);
@@ -249,37 +250,16 @@ export const Container = styled.section`
         position: absolute;
         top: 1rem;
         right: 1rem;
-        font-size: 4rem;
+        font-size: 2rem;
         cursor: pointer;
-        transition: color 0.3s ease;
+        background: none;
+        border: none;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
 
         &:hover {
           color: var(--secondary);
-        }
-      }
-
-      .image-controls {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
-
-        button {
-          background-color: var(--primary);
-          color: var(--text-dark);
-          padding: 0.5rem 1rem;
-          border: none;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-          }
-
-          &:active {
-            transform: translateY(0);
-          }
+          transform: scale(1.1);
         }
       }
     }
